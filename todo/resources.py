@@ -83,6 +83,8 @@ class Todo(Resource):
                 data['todos'] = list(map(lambda x:x.item, current_list[0].todos))
                 data['status'] = 'success'
                 return data
+        else:
+            data['is_loggedin'] = False
         data['todos'] = []
         data['status'] = 'fail'
         print(data)
