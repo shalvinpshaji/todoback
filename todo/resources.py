@@ -7,7 +7,7 @@ parser.add_argument('list')
 
 
 def is_loggedin():
-    if 'user_id' in session and User.query.filter_by(id = session['user_id']).first():
+    if 'user_id' in session:
         return True
     return False
 
