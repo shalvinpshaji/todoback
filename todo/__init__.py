@@ -6,10 +6,9 @@ from flask_cors import CORS
 from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
-CORS(app)
 app.config.from_object(Config())
 api = Api(app)
+CORS(app, supports_credentials=True)
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
-
 from todo import resources
